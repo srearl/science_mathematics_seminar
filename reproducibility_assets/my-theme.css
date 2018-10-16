@@ -2,5 +2,13 @@
   color: #71A3C3;
 }
 .small {
-  font-size: 70%
+  font-size: 85%
+}
+.less-left {
+  float: left;
+  width: 30%;
+}
+.more-right {
+  float: right;
+  width: 65%;
 }

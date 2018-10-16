@@ -18,15 +18,26 @@ options(htmltools.dir.version = FALSE)
 
 ```
 
-let us clarify what we mean by reproducibility...
+```{r libraries, include=FALSE}
+
+library(tidyverse)
+library(kableExtra)
+```
+
+
+### reproducibility
 
 * Replication is the cornerstone of scientific research, with consistent findings from independent investigators the primary means by which scientific evidence accumulates for or against a hypothesis. 
+
 * The **replicability** of a study is related to the chance that an independent experiment targeting the same scientific question will produce a result consistent with the original study. 
+
 * Recently, a variation of this concept, referred to as reproducibility, has emerged as a key minimum acceptable standard, especially for heavily computational research. 
-* **Reproducibility is defined as the ability to recompute data analytic results, given an observed data set and knowledge of the data analysis pipeline.** 
+
+* *Reproducibility is defined as the ability to recompute data analytic results, given an observed data set and knowledge of the data analysis pipeline.* 
+
 * Replicability and reproducibility are two foundational characteristics of a successful scientific research enterprise. 
 
-.footnote[The reproducibility crisis in science: A statistical counterattack, R. Peng, 10.1111/j.1740-9713.2015.00827.x]
+.footnote[R. Peng [The reproducibility crisis in science: A statistical counterattack](10.1111/j.1740-9713.2015.00827.x)]
 
 
 ---
@@ -71,23 +82,9 @@ Cornell
 
 ---
 
-git flow 
+### reproducibility, for scientific reasons
 
-<img src="reproducibility_assets/figure-html/git_flow.png" width="100%">
-
-
----
-
-git collaboration
-
-<img src="reproducibility_assets/figure-html/git_collaboration.png" width="100%">
-
-
----
-
-#### reproducability, for scientific reasons
-
-##### given your data, someone else can reproduce your exact results
+#### given your data, someone else can reproduce your exact results
 
 * increased trustworthiness
 * more rigorous, reliable science
@@ -98,16 +95,16 @@ git collaboration
 *-- Philip B. Stark, <a href="https://www.nature.com/articles/d41586-018-05256-0" target="_blank">Nature 2018</a>*
   
   
-.footnote[J. Thompson bit.ly/jlt-rmed2018]
+.footnote[J. Thompson [bit.ly/jlt-rmed2018](bit.ly/jlt-rmed2018)]
 
 
 ---
 
-#### reproducibility, for personal reasons
+### reproducibility, for personal reasons
 
 * "Did I mention that subjects with IDs > 100 are actually kangaroos and should be excluded?"
 
-* "I won the lottery; now my coworker is taking over"
+* "I won the lottery 👏 - now my coworker is taking over"
 
 * "Journal reviews back after 8 months! Time for revisions!"
 
@@ -118,18 +115,7 @@ git collaboration
 
 ---
 
-#### plan ahead to live your best (research) life
-
-"It's not thinking, 'This is easiest for myself right now.' It's thinking, 'When I'm working on this next week, next month, right before I graduate — how do I set myself up so that it's easier later?'
-
--- Julia Stewart Lowndes in "A toolkit for data transparency takes shape", [Nature 2018](https://www.nature.com/articles/d41586-018-05256-0)
-  
-.footnote[J. Thompson [bit.ly/jlt-rmed2018](bit.ly/jlt-rmed2018)]
-
-
----
-
-#### research data workflow: this is your world (or it will be soon)
+### research data workflow: this is your world (or it will be soon)
 
 <img src="reproducibility_assets/figure-html/workflow.png" width="100%">
 
@@ -143,18 +129,39 @@ git collaboration
 <br>
 
 * how do you keep that up-to-date?
+
+* what if something changes, what if something needs to be redone - how do you manage that?
+
+* why do the results in table 1 not seem to correspond to the results in figure 1?
+
+* why were those particular samples omitted?
+
+* where did I get these data?
+
+* how did I make that figure?
+
+**basically, if the thought of redoing your analyses is terrifying then you are doing it wrong (paraphrasing Jenny Bryan)** 😱
+
+
+---
+
+background-image: url(https://media.giphy.com/media/MEtSuIu6qu0HC/giphy.gif)
+background-position: 50% 80%
+background-size: 50%
+
+* how do you keep that up-to-date?
 * what if something changes, what if something needs to be redone - how do you manage that?
 * why do the results in table 1 not seem to correspond to the results in figure 1?
 * why were those particular samples omitted?
 * where did I get these data?
 * how did I make that figure?
 
-**basically, if the thought of redoing your analyses is terrifying then you are doing it wrong (paraphrasing Jenny Bryan)**
+**basically, if the thought of redoing your analyses is terrifying then you are doing it wrong (paraphrasing Jenny Bryan)** 😱
 
 
 ---
 
-#### research data workflow: this is your world (or it will be soon) - .light-blue[now add to that publishing your data and code]
+### research data workflow: this is your world (or it will be soon) - .light-blue[now add to that publishing your data and code]
 
 <img src="reproducibility_assets/figure-html/workflow_with_data.png" width="100%">
 
@@ -163,7 +170,7 @@ git collaboration
 
 ---
 
-#### what we will cover (okay, touch on) today
+### what we will cover (okay, touch on) today
 
 * best practices
   + naming
@@ -179,50 +186,46 @@ git collaboration
 
 ---
 
-#### BP (Best Practice): naming - principles for file names
+### BP [Best Practice]: naming things - principles for file names
 
 * machine readable
+
+  - regular expression and globbing friendly
+      + avoid spaces, punctuation, accented characters, case sensivity
+  - easy to compute on with deliberate use of delimiters
+      + example: *2017-11-17_berneilwash_oxygen_day_1.csv*
+
+.footnote[J. Bryan [Naming things](https://speakerdeck.com/jennybc/how-to-name-files)]
+  
+--
+
 * human readable
-* plays well with default ordering
 
-.footnote[J. Bryan [Naming things](https://speakerdeck.com/jennybc/how-to-name-files)]
+  - names contain info about the content
+  - easy to figure out what what something is based on the name
+      + *2016_salmon_counts.csv* conveys a lot of information about the object, and has far more meaning than *fishData.csv*
+  
+--
 
+* play well with default ordering
+.pull-left[
 
----
+- 1_file_name.csv
+- 11_file_name.csv
+- 2_file_name.csv
+]
 
-#### BP: naming - machine readable
+.pull-right[
 
-* regular expression and globbing friendly
-  + avoid spaces, punctuation, accented characters, case sensivity
-* easy to compute on with deliberate use of delimiters
-
-example: **"2017-11-17_berneilwash_oxygen_day_1.csv**
-
-underscores allow us to delimit units of metadata and facilitate searching
-
-* easy to search for files later
-* easy to narrow file lists based on names
-* easy to extract information from the file names, e.g., by splitting
-* avoiding spaces, punctuation, accented characters, case sensivity will make your life much easier
-
-.footnote[J. Bryan [Naming things](https://speakerdeck.com/jennybc/how-to-name-files)]
+- 01_file_name.csv
+- 02_file_name.csv
+- 11_file_name.csv
+]
 
 
 ---
 
-#### BP: naming - human readable
-
-* names contain info about the content
-* easy to figure out what what something is based on the name
-
-for example **2016_salmon_counts.csv** conveys a lot of information about the object, and has far more meaning than **fishData.csv**
-
-.footnote[J. Bryan [Naming things](https://speakerdeck.com/jennybc/how-to-name-files)]
-
-
----
-
-#### BP: naming - names matter in times of stress
+### BP: naming - names matter in times of stress
 
 which set of file(names)s would you prefer at 3 a.m. before a dealine?
 
@@ -233,31 +236,15 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 
 ---
 
-#### BP: naming - plays well with default ordering
-
-* put something numeric first
-* use the ISO 8601 standard for dates (YYYY-MM-DD) everwhere, always without exception ever
-* left pad numbers with zeroes as needed
-
-  + 1_file_name.csv
-  + 11_file_name.csv
-  + 2_file_name.csv
-  +       --
-  + 01_file_name.csv
-  + 02_file_name.csv
-  + 11_file_name.csv
-
-.footnote[J. Bryan [Naming things](https://speakerdeck.com/jennybc/how-to-name-files)]
-
-
----
-
-#### BP: date format matters (a lot!)
+### BP: date format matters (a lot!)
 
 .center[
+
   <img src="reproducibility_assets/figure-html/noniso.png" width="70%">
-  .small[comprehensive map of all countries in the world that use MMDDYYYY format]
+  
+  .small[**comprehensive map of all countries in the world that use MMDDYYYY format**]
 ]
+
 
 use the ISO 8601 standard for dates (YYYY-MM-DD) everwhere, always without exception!
 
@@ -266,190 +253,380 @@ use the ISO 8601 standard for dates (YYYY-MM-DD) everwhere, always without excep
 
 ---
 
-#### BP: employ sound project organization
+### BP: employ sound project organization
 
 *your closest collaborator is you six months ago, but you do not reply to emails (K. Broman paraphrasing M. Holder)*
 
 .pull-left[
-  <img src="reproducibility_assets/figure-html/projectOrganizationCropped.png" width="80%">
+  <img src="reproducibility_assets/figure-html/projectOrganizationCropped.png" width="95%">
 ]
 
 .pull-right[
-  .small[
-  * segregate all materials for a project in one directory
-  * organize according to prevailing conventions (e.g., R package structure)
-  * maintain a clear separation of data, method, and output, while unambiguously expressing the relationship between the three
-  * specify the computational environment used for the original analysis
-  * organize such that another person can know what to expect from the plain meaning of the file and directory names
-  * include README files
-  ]
+* segregate all materials for a project in one directory
+* organize according to prevailing conventions (e.g., R package structure)
+* maintain a clear separation of data, method, and output while unambiguously expressing the relationship among them
+* specify the computational environment used for the original analysis
+* organize such that another person can know what to expect from the plain meaning of the file and directory names
+* include README files
 ]
 
-.footnote[Steps toward reproducible research, K. Broman, [bit.ly/jsm2016](bit.ly/jsm2016)]
+.footnote[K. Broman [Steps toward reproducible research](bit.ly/jsm2016)]
 
 
 ---
 
-#### BP: keep the raw data raw
+### BP: keep the raw data raw
 
 * save the raw data
 
-.footnote[Wilson et al. (2017) Good enough practices in scientific computing. [PLoS Comput Biol13(6): e1005510](https://doi.org/10.1371/journal.pcbi.1005510)]
+.footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
 
 
 ---
 
-#### BP: thoughtful curation
+### BP: thoughtful curation
 
 * curate your data in a way that you would like to receive it
 
-.footnote[Wilson et al. (2017) Good enough practices in scientific computing. [PLoS Comput Biol13(6): e1005510](https://doi.org/10.1371/journal.pcbi.1005510)]
+.center[
+  <img src="reproducibility_assets/figure-html/usgs.png" width="80%">
+]
+
+.footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
 
 
 ---
 
-#### BP: open file formats
+### BP: open file formats
 
 * use open file formats (e.g., csv not xlsx)
 
-.footnote[Wilson et al. (2017) Good enough practices in scientific computing. [PLoS Comput Biol13(6): e1005510](https://doi.org/10.1371/journal.pcbi.1005510)]
+.footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
 
 
 ---
 
-<!-- need to fix this -->
-
-#### BP: analysis-friendly data
+### BP: analysis-friendly data
 
 * create analysis-friendly data:
   + each column a variable
   + each row an observation
 
+
 .pull-left[
 ```{r, echo=FALSE}
-knitr::kable(head(iris))
+
+knitr::kable(head(iris, format = "html")) %>%
+  kable_styling(full_width = F, font_size = 14)
 ```
 ]
 
 .pull-right[
 ```{r, echo=FALSE, message=FALSE}
-library(tidyverse)
-knitr::kable(head(gather(head(iris), key = "metric", value = "value", -Species), n=10))
+
+knitr::kable(head(gather(head(iris), key = "metric", value = "value", -Species), n=10)) %>% 
+  kable_styling(full_width = F, font_size = 14)
 ```
 ]
 
-.footnote[Wilson et al. (2017) Good enough practices in scientific computing. [PLoS Comput Biol13(6): e1005510](https://doi.org/10.1371/journal.pcbi.1005510)]
+.footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
 
 
 ---
 
-#### BP: record everything
+### BP: record everything
 
 * record all the steps of the data process
 
 
 ---
 
-#### BP: everything in a script
+### BP: everything in a script
 
-.light-blue[The most basic principle for reproducible research is: do everything via code]
+.light-blue[The most basic principle for reproducible research is: **do everything via code**]
 
 * downloading data from the web, 
 * converting an Excel file to CSV,
 * renaming columns or variables, 
 * omitting bad samples or data points
-* ...do all of these with scripts
+* *...do all of these with programatically*
 
 You will be tempted to open up a data file and hand-edit. But if you get a revised version of that file, you will need to do it again, and it will be harder to figure out what it was that you did.
 
 Some things are more cumbersome via code but you will save time in the long run.
 
-.footnote[Steps toward reproducible research, K. Broman, [bit.ly/jsm2016](bit.ly/jsm2016)]
+.footnote[K. Broman [Steps toward reproducible research](bit.ly/jsm2016)]
 
 
 ---
 
-#### BP: learn a language. any language, just do it
+### BP: learn a language. any language, just do it
 
 .pull-left[
   <img src="reproducibility_assets/figure-html/rlogo.jpg" width="100%">
 ]
 
 .pull-right[
-  <img src="reproducibility_assets/figure-html/python-logo.png" width="100%">
+  <img src="reproducibility_assets/figure-html/python-logo.png" width="70%">
 ]
 
 
 ---
 
-#### spreadsheets: the dark side
+### spreadsheets: the dark side
 
-.pull-left[
-  <img src="reproducibility_assets/figure-html/excel_errors_wash_post.png" width="50%">
+.center[
+  <img src="reproducibility_assets/figure-html/excel_errors_wash_post.png" width="80%">
 ]
 
 
 ---
 
-#### spreadsheets: the 2nd best tool for everything
+### spreadsheets: the 2nd best tool for everything
 
 .pull-left[
-  <img src="reproducibility_assets/figure-html/spreadsheet_hidden_data.png" width="90%">
+  <img src="reproducibility_assets/figure-html/spreadsheet_hidden_data.png" width="100%">
 ]
 
 .pull-right[
 
 the beauty and the travesty of spreadsheets is that they allow you to do just about anything
 
-    * data in merged cells
-    * data in formatting
-    * small multiples
-    * data in formulas
+* data in merged cells
+* data in formatting
+* small multiples
+* data in formulas
 
 ]
 
-use open file formats (e.g., CSV, not XLSX)
+
+
+
+
+.center[
+  **use open file formats (e.g., CSV, not XLSX)**
+]
 
 .footnote[J. Bryan [Spreadsheets](https://speakerdeck.com/jennybc/spreadsheets)]
 
 
 ---
 
-#### spreadsheets versus scripting
+### spreadsheets versus scripting
 
 consider, we want to remove samples that we feel may have been contaminated...
 
 .pull-left[
-  <p>
-    <b>in a R script</b>
-  </p>
+
+  **in a R script**
   <hr>
-  <p>...some work...</p>
-  <p style="margin-bottom:0;"># remove samples 4, 5, 6, that may</p>
-  <p style="margin-bottom:0;"># have been compromised due to</p>
-  <p style="margin-bottom:0;"># wading upstream during sampling</p>
-  <br> 
-  <p style="margin-bottom:0;">chemistry_data %>%
-  <p style="margin-bottom:0; text-indent:1em;">filter(!sample_id %in% c(4,5,6))</p>
-  <br> 
-  <p>...more work...</p>
+  ```r
+  some work...
+  ```
+  
+  *comment code:*
+  .light-blue[remove samples 4 and 5 that may have been compromised due to wading upstream during sampling]
+  
+  ```r
+  chemistry_data %>%
+    filter(!sampleID %in% c(4,5))
+  ```
+  
+  ```r
+  ...more work
+  ```
 ]
 
 .pull-right[
-  <p>
-    <b>in a spreadsheet</b>
-  </p>
+
+  **in a spreadsheet**
   <hr>
-  <img src="reproducibility_assets/figure-html/spreadsheet_remove_samples.png" width="90%">
+  <img src="reproducibility_assets/figure-html/spreadsheet_remove_samples.png" width="105%">
+  
 ]
 
 
-<!-- LEFT OFF HERE -->
+---
+
+### literate programming
+
+a common approach
+
+<img src="reproducibility_assets/figure-html/literateProgramming.png">
+
+.footnote[K. Healy [The Plain Person's Guide to Plain Text Social Science](https://kieranhealy.org/files/papers/plain-person-text.pdf)]
+
+
+---
+
+### literate programming
+
+* the problem is that the gaps are particularly prone to errors
+* literate programming is essentially the integration of code and text
+
+<small>Knuth, D. E. (1992), Literate programming, CSLI Lecture Notes, Stanford, CA: Center for the Study of Language and Information (CSLI), 1992</small>
+
+<img src="reproducibility_assets/figure-html/literateProgramming.png" >
+
+
+.footnote[K. Healy [The Plain Person's Guide to Plain Text Social Science](https://kieranhealy.org/files/papers/plain-person-text.pdf)]
+
+
+---
+
+### version control
+
+.center[
+  <img src="reproducibility_assets/figure-html/CAP_renewal_screenshot.png" width="100%">
+]
+
+
+---
+
+### version control: Git
+
+* git watches repositories (like a directory) for changes
+* git asks that you describe changes when they are made
+* git remembers old versions if you need them
+* git also keeps an eye out for conflicts, and forces you to resolve them
+
+.footnote[Jeff Goldsmith ["Git"](https://speakerdeck.com/jeffgoldsmith/dsi-git-and-github)]
+
+
+---
+
+### version control: Git + GitHub 
+
+when combined with a service such as GitHub
+
+* ...allows multiple people to contribute to the same repository, and does all of the aforementioned for everyone at once
+
+.center[
+  <img src="reproducibility_assets/figure-html/git_collaboration.png" width="65%">
+]
+
+.footnote[Jeff Goldsmith ["Git"](https://speakerdeck.com/jeffgoldsmith/dsi-git-and-github)]
+
+---
+
+### version control: Git
+
+helps us to tame the chaos 👏
+
+.center[
+
+  <img src="reproducibility_assets/figure-html/git_flow.png" width="80%">
+]
+
+
+---
+
+### version control: Git
+
+.center[
+  <img src="reproducibility_assets/figure-html/bokis_on_git.png" width="80%">
+]
+
+
+---
+
+### I am not saying it is easy
+
+Kieran Healy on two revolutions in computing:
+
+"On one side, the mobile, cloud-centered, touch-screen, phone-or-tablet model has brought powerful computing to more people than ever before."
+
+"On the other side, tools for coding, data analysis, and writing are also revolutionary but mostly work by gluing together separate, specialized widgets that do much less to hide the operation system layer, and require knowledge of things like the file system."
+
+
+.footnote[K. Healy [The Plain Person's Guide to Plain Text Social Science](https://kieranhealy.org/files/papers/plain-person-text.pdf)]
+
+
+---
+
+background-image: url(https://media.giphy.com/media/PnXRAFOJFCt3i/giphy.gif)
+background-position: 50% 80%
+background-size: 40%
+
+### I am not saying it is easy
+
+Kieran Healy on two revolutions in computing:
+
+"On one side, the mobile, cloud-centered, touch-screen, phone-or-tablet model has brought powerful computing to more people than ever before."
+
+"On the other side, tools for coding, data analysis, and writing are also revolutionary but mostly work by gluing together separate, specialized widgets that do much less to hide the operation system layer, and require knowledge of things like the file system."
+
+
+.footnote[K. Healy [The Plain Person's Guide to Plain Text Social Science](https://kieranhealy.org/files/papers/plain-person-text.pdf)]
+
+
+---
+
+### OHI: nature ecology & evolution
+
+.center[
+  <img src="reproducibility_assets/figure-html/lowndes_title.png" width="90%">
+]
+
+.footnote[Lowndes et al. (2017) [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160)]
+
+
+---
+
+### OHI: framework
+
+.center[
+  <img src="reproducibility_assets/figure-html/ohi_framework.png" width="90%">
+]
+
+.footnote[Lowndes et al. (2017) [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160)]
+
+
+---
+
+### OHI: evolution of a workflow
+
+.center[
+  <img src="reproducibility_assets/figure-html/lowndes_figure1.jpg" width="80%">
+]
+
+.footnote[Lowndes et al. (2017) [Our path to better science in less time using open data science tools](https://www.nature.com/articles/s41559-017-0160)]
+
+
+---
+
+### BP: forethought
+
+strive for reproducibility from the outset
+
+"It's not thinking, 'This is easiest for myself right now.' It's thinking, 'When I'm working on this next week, next month, right before I graduate — how do I set myself up so that it's easier later?'
+
+*-- Julia Stewart Lowndes in "A toolkit for data transparency takes shape", [Nature 2018](https://www.nature.com/articles/d41586-018-05256-0)*
+  
+.footnote[J. Thompson [bit.ly/jlt-rmed2018](bit.ly/jlt-rmed2018)]
+
+
+---
+
+### Data Management Plan (DMP)
+
+"...a written document that describes the data you expect to acquire or generate during the course of a research project, how you will manage, describe, analyze, and store those data, and what mechanisms you will use at the end of your project to share and preserve your data." Stanford Libraries [Data Management Plans](https://library.stanford.edu/research/data-management-services/data-management-plans)
+
+* Describes how data will be:
+
+  - Collected
+  - Managed during the project
+  - Preserved after completion
+
+.center[
+  <img src="reproducibility_assets/figure-html/dmp_tool.JPG" width="80%">
+]
+
 
 ---
 <!-- this starts the metadata + publishing lecture -->
 
-#### why publish data
+### why publish data
 
 * big picture
   + increasingly a requirement
@@ -458,15 +635,16 @@ consider, we want to remove samples that we feel may have been contaminated...
 * researcher perspective
   + papers with publicly available data receive a higher number of citations than similar studies lacking available data<sup>1</sup>
   + data sharing is associated with higher productivity<sup>1</sup>
-  + <a href="https://portal.lternet.edu/nis/mapbrowse?packageid=knb-lter-cap.621.1" target="_blank">a citeable product</a>
+  + [citeable product](https://portal.lternet.edu/nis/mapbrowse?packageid=knb-lter-cap.621.1)
   
 
 .footnote[<sup>1</sup>[Marwick et al. 2017](https://doi.org/10.7287/peerj.preprints.3192v1)]
 
+
 ---
 
 .pull-left[
-  <img src="reproducibility_assets/figure-html/ClimateGate.png" width="100%">
+  <img src="reproducibility_assets/figure-html/ClimateGate.png" width="105%">
 ]
 
 .pull-right[
@@ -474,18 +652,17 @@ consider, we want to remove samples that we feel may have been contaminated...
 "The climate scientists at the centre of a media storm over leaked emails were yesterday cleared of accusations that they fudged their results and silenced critics, but a review found they had failed to be open enough about their work."
 ]
 
-.footnote[https://nceas.github.io/crescynt-training/]
+.footnote[[NCEAS crescynt-training](https://nceas.github.io/crescynt-training/)]
 
 
 ---
 
-#### concerns about sharing data
+### concerns about sharing data
 
 most common concerns can be addressed *with metadata*
 
 .pull-left[
 .center[**concern**]
-
 <hr>
 
 * inappropriate use due to misunderstanding of research purpose or parameters
@@ -497,8 +674,7 @@ most common concerns can be addressed *with metadata*
 ]
 
 .pull-right[
-.center[**solution**]
-
+  .center[**solution**]
 <hr>
 
 * provide rich abstract, purpose, use constraints, and supplemental information
@@ -509,7 +685,7 @@ most common concerns can be addressed *with metadata*
 
 ]
 
-.footnote[https://www.dataone.org/education-modules]
+.footnote[[DataONE education modules](https://www.dataone.org/education-modules)]
 
 
 ---
@@ -525,7 +701,7 @@ most common concerns can be addressed *with metadata*
 
 ---
 
-#### what do we mean by data repository?
+### what do we mean by data repository?
 
 ```{r echo=FALSE}
 dataRepo <- data.frame(
@@ -541,12 +717,12 @@ knitr::kable(dataRepo, format = "html")
 
 .small[*KNB (the Knowledge Network for Biocomplexity) is an international repository intended to facilitate ecological and environmental research]
 
-.footnote[https://nceas.github.io/crescynt-training/]
+.footnote[[NCEAS crescynt-training](https://nceas.github.io/crescynt-training/)]
 
 
 ---
 
-#### where to publish?
+### where to publish?
 
 .center[
   <img src="reproducibility_assets/figure-html/r3data.png" width="60%">
@@ -559,15 +735,16 @@ is wonderful but I would start with...
 
 ---
 
-#### metadata standards: there are many
+### metadata standards: there are many
 
 .center[
-  <img src="reproducibility_assets/figure-html/metadata_standards_list.png" width="80%">
+  <img src="reproducibility_assets/figure-html/metadata_standards_list.png" width="90%">
 ]
+
 
 ---
 
-#### metadata standards: what is a standard?
+### metadata standards: what is a standard?
 
 standards provides a structure to describe data with:
 - common terms to allow consistency between records
@@ -581,16 +758,16 @@ in search and retrieval, standards provide:
 
 <!-- <p style="color:#00BFFF">...like a blueprint for the structure of information</p> -->
 
-.footnote[https://www.dataone.org/education-modules]
+.footnote[[DataONE education modules](https://www.dataone.org/education-modules)]
 
 
 ---
 
-#### metadata standards: a blueprint
+### metadata standards: a blueprint
 
 *example for a house*
 
-.pull-left[
+.less-left[
 
 house:<br>
 &nbsp;parcel_number:<br>
@@ -606,7 +783,7 @@ house:<br>
 
 ]
 
-.pull-right[
+.more-right[
 
 ```xml
 <house>
@@ -631,7 +808,7 @@ house:<br>
 
 ---
 
-#### metadata standards: a blueprint
+### metadata standards: a blueprint
 
 *example for ecological data*
 
@@ -660,7 +837,7 @@ house:<br>
 
 ---
 
-#### metadata: the who, what, why, where, when
+### metadata: the who, what, why, where, when
 
 - principal investigator
 - funding sources
@@ -675,23 +852,24 @@ house:<br>
 - technical information on files
 - data collection instruments
 
-.footnote[Metadata for Research Data, B. Marshall]
+.footnote[B. Marshall [Metadata for Research Data](https://speakerdeck.com/bmarshall/metadata-for-research-data)]
 
 
 ---
 
+<br>
 <br>
 <br>
 <br>
 
 "data without the contextual information needed to interpret it (and ultimately reproduce the results) is useless"
 
-.footnote[Metadata for Research Data, B. Marshall]
+.footnote[B. Marshall [Metadata for Research Data](https://speakerdeck.com/bmarshall/metadata-for-research-data)]
 
 
 ---
 
-#### what makes good metatadata?
+### what makes good metatadata?
 
 - consistency with commonly used fields (e.g., YYYY-MM-DD)
 - use a standard vocubulary
@@ -709,11 +887,11 @@ house:<br>
   + copy from a text file (not a file with rich text like Word or RTF)
 
 
-.footnote[https://www.dataone.org/education-modules]
+.footnote[[DataONE education modules](https://www.dataone.org/education-modules)]
 
 ---
 
-#### a special note about titles
+### a special note about titles
 
 .center[
   <img src="reproducibility_assets/figure-html/recently_added_titles.png" width="100%">
@@ -721,10 +899,10 @@ house:<br>
 
 ---
 
-#### orcid
+### orcid
 
 .center[
-<img src="reproducibility_assets/figure-html/orcid.png" width="50%">
+  <img src="reproducibility_assets/figure-html/orcid.png" width="50%">
 ]
 
 [orcid.org](https://orcid.org/)
