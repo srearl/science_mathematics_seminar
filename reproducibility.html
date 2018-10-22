@@ -24,7 +24,7 @@ class: center, middle, inverse, title-slide
 
 
 
-### reproducibility
+#### reproducibility
 
 * Replication is the cornerstone of scientific research, with consistent findings from independent investigators the primary means by which scientific evidence accumulates for or against a hypothesis. 
 
@@ -81,9 +81,9 @@ Cornell
 
 ---
 
-### reproducibility, for scientific reasons
+#### reproducibility, for scientific reasons
 
-#### given your data, someone else can reproduce your exact results
+##### given your data, someone else can reproduce your exact results
 
 * increased trustworthiness
 * more rigorous, reliable science
@@ -99,7 +99,7 @@ Cornell
 
 ---
 
-### reproducibility, for personal reasons
+#### reproducibility, for personal reasons
 
 * "Did I mention that subjects with IDs &gt; 100 are actually kangaroos and should be excluded?"
 
@@ -114,7 +114,7 @@ Cornell
 
 ---
 
-### research data workflow: this is your world (or it will be soon)
+#### research data workflow: this is your world (or it will be soon)
 
 &lt;img src="reproducibility_assets/figure-html/workflow.png" width="100%"&gt;
 
@@ -144,9 +144,11 @@ Cornell
 
 ---
 
+&lt;!--
 background-image: url(https://media.giphy.com/media/MEtSuIu6qu0HC/giphy.gif)
 background-position: 50% 80%
 background-size: 50%
+--&gt;
 
 * how do you keep that up-to-date?
 * what if something changes, what if something needs to be redone - how do you manage that?
@@ -160,7 +162,7 @@ background-size: 50%
 
 ---
 
-### research data workflow: this is your world (or it will be soon) - .light-blue[now add to that publishing your data and code]
+#### research data workflow: this is your world (or it will be soon) - .light-blue[now add to that publishing your data and code]
 
 &lt;img src="reproducibility_assets/figure-html/workflow_with_data.png" width="100%"&gt;
 
@@ -169,7 +171,7 @@ background-size: 50%
 
 ---
 
-### what we will cover (okay, touch on) today
+#### what we will cover (okay, touch on) today
 
 * best practices
   + naming
@@ -185,7 +187,7 @@ background-size: 50%
 
 ---
 
-### BP [Best Practice]: naming things - principles for file names
+#### BP [Best Practice]: naming things - principles for file names
 
 * machine readable
 
@@ -224,7 +226,7 @@ background-size: 50%
 
 ---
 
-### BP: naming - names matter in times of stress
+#### BP: naming - names matter in times of stress
 
 which set of file(names)s would you prefer at 3 a.m. before a dealine?
 
@@ -235,7 +237,7 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 
 ---
 
-### BP: date format matters (a lot!)
+#### BP: date format matters (a lot!)
 
 .center[
 
@@ -252,7 +254,7 @@ use the ISO 8601 standard for dates (YYYY-MM-DD) everwhere, always without excep
 
 ---
 
-### BP: employ sound project organization
+#### BP: employ sound project organization
 
 *your closest collaborator is you six months ago, but you do not reply to emails (K. Broman paraphrasing M. Holder)*
 
@@ -274,7 +276,7 @@ use the ISO 8601 standard for dates (YYYY-MM-DD) everwhere, always without excep
 
 ---
 
-### BP: keep the raw data raw
+#### BP: keep the raw data raw
 
 * save the raw data
 
@@ -283,7 +285,7 @@ use the ISO 8601 standard for dates (YYYY-MM-DD) everwhere, always without excep
 
 ---
 
-### BP: thoughtful curation
+#### BP: thoughtful curation
 
 * curate your data in a way that you would like to receive it
 
@@ -296,7 +298,7 @@ use the ISO 8601 standard for dates (YYYY-MM-DD) everwhere, always without excep
 
 ---
 
-### BP: open file formats
+#### BP: open file formats
 
 * use open file formats (e.g., csv not xlsx)
 
@@ -305,7 +307,7 @@ use the ISO 8601 standard for dates (YYYY-MM-DD) everwhere, always without excep
 
 ---
 
-### BP: analysis-friendly data
+#### BP: analysis-friendly data
 
 * create analysis-friendly data:
   + each column a variable
@@ -439,14 +441,14 @@ use the ISO 8601 standard for dates (YYYY-MM-DD) everwhere, always without excep
 
 ---
 
-### BP: record everything
+#### BP: record everything
 
 * record all the steps of the data process
 
 
 ---
 
-### BP: everything in a script
+#### BP: everything in a script
 
 .light-blue[The most basic principle for reproducible research is: **do everything via code**]
 
@@ -465,7 +467,7 @@ Some things are more cumbersome via code but you will save time in the long run.
 
 ---
 
-### BP: learn a language. any language, just do it
+#### BP: learn a language. any language, just do it
 
 .pull-left[
   &lt;img src="reproducibility_assets/figure-html/rlogo.jpg" width="100%"&gt;
@@ -478,7 +480,7 @@ Some things are more cumbersome via code but you will save time in the long run.
 
 ---
 
-### spreadsheets: the dark side
+#### spreadsheets: the dark side
 
 .center[
   &lt;img src="reproducibility_assets/figure-html/excel_errors_wash_post.png" width="80%"&gt;
@@ -487,7 +489,7 @@ Some things are more cumbersome via code but you will save time in the long run.
 
 ---
 
-### spreadsheets: the 2nd best tool for everything
+#### spreadsheets: the 2nd best tool for everything
 
 .pull-left[
   &lt;img src="reproducibility_assets/figure-html/spreadsheet_hidden_data.png" width="100%"&gt;
@@ -517,7 +519,7 @@ the beauty and the travesty of spreadsheets is that they allow you to do just ab
 
 ---
 
-### spreadsheets versus scripting
+#### spreadsheets versus scripting
 
 consider, we want to remove samples that we feel may have been contaminated...
 
@@ -553,7 +555,7 @@ consider, we want to remove samples that we feel may have been contaminated...
 
 ---
 
-### literate programming
+#### literate programming
 
 a common approach
 
@@ -564,7 +566,7 @@ a common approach
 
 ---
 
-### literate programming
+#### literate programming
 
 * the problem is that the gaps are particularly prone to errors
 * literate programming is essentially the integration of code and text
@@ -579,7 +581,7 @@ a common approach
 
 ---
 
-### version control
+#### version control
 
 .center[
   &lt;img src="reproducibility_assets/figure-html/CAP_renewal_screenshot.png" width="100%"&gt;
@@ -588,7 +590,7 @@ a common approach
 
 ---
 
-### version control: Git
+#### version control: Git
 
 * git watches repositories (like a directory) for changes
 * git asks that you describe changes when they are made
@@ -600,7 +602,7 @@ a common approach
 
 ---
 
-### version control: Git + GitHub 
+#### version control: Git + GitHub 
 
 when combined with a service such as GitHub
 
@@ -614,7 +616,7 @@ when combined with a service such as GitHub
 
 ---
 
-### version control: Git
+#### version control: Git
 
 helps us to tame the chaos 👏
 
@@ -626,7 +628,7 @@ helps us to tame the chaos 👏
 
 ---
 
-### version control: Git
+#### version control: Git
 
 .center[
   &lt;img src="reproducibility_assets/figure-html/bokis_on_git.png" width="80%"&gt;
@@ -635,7 +637,7 @@ helps us to tame the chaos 👏
 
 ---
 
-### I am not saying it is easy
+#### I am not saying it is easy
 
 Kieran Healy on two revolutions in computing:
 
@@ -649,11 +651,13 @@ Kieran Healy on two revolutions in computing:
 
 ---
 
+&lt;!--
 background-image: url(https://media.giphy.com/media/PnXRAFOJFCt3i/giphy.gif)
 background-position: 50% 80%
 background-size: 40%
+--&gt;
 
-### I am not saying it is easy
+#### I am not saying it is easy
 
 Kieran Healy on two revolutions in computing:
 
@@ -667,7 +671,7 @@ Kieran Healy on two revolutions in computing:
 
 ---
 
-### OHI: nature ecology &amp; evolution
+#### OHI: nature ecology &amp; evolution
 
 .center[
   &lt;img src="reproducibility_assets/figure-html/lowndes_title.png" width="90%"&gt;
@@ -678,7 +682,7 @@ Kieran Healy on two revolutions in computing:
 
 ---
 
-### OHI: framework
+#### OHI: framework
 
 .center[
   &lt;img src="reproducibility_assets/figure-html/ohi_framework.png" width="90%"&gt;
@@ -689,7 +693,7 @@ Kieran Healy on two revolutions in computing:
 
 ---
 
-### OHI: evolution of a workflow
+#### OHI: evolution of a workflow
 
 .center[
   &lt;img src="reproducibility_assets/figure-html/lowndes_figure1.jpg" width="80%"&gt;
@@ -700,7 +704,7 @@ Kieran Healy on two revolutions in computing:
 
 ---
 
-### BP: forethought
+#### BP: forethought
 
 strive for reproducibility from the outset
 
@@ -713,7 +717,7 @@ strive for reproducibility from the outset
 
 ---
 
-### Data Management Plan (DMP)
+#### Data Management Plan (DMP)
 
 "...a written document that describes the data you expect to acquire or generate during the course of a research project, how you will manage, describe, analyze, and store those data, and what mechanisms you will use at the end of your project to share and preserve your data." Stanford Libraries [Data Management Plans](https://library.stanford.edu/research/data-management-services/data-management-plans)
 
@@ -728,11 +732,10 @@ strive for reproducibility from the outset
 ]
 
 
-
 ---
 &lt;!-- this starts the metadata + publishing lecture --&gt;
 
-### why publish data
+#### why publish data
 
 * big picture
   + increasingly a requirement
@@ -745,6 +748,7 @@ strive for reproducibility from the outset
   
 
 .footnote[&lt;sup&gt;1&lt;/sup&gt;[Marwick et al. 2017](https://doi.org/10.7287/peerj.preprints.3192v1)]
+
 
 ---
 
@@ -762,7 +766,7 @@ strive for reproducibility from the outset
 
 ---
 
-### concerns about sharing data
+#### concerns about sharing data
 
 most common concerns can be addressed *with metadata*
 
@@ -806,7 +810,7 @@ most common concerns can be addressed *with metadata*
 
 ---
 
-### what do we mean by data repository?
+#### what do we mean by data repository?
 
 &lt;table&gt;
  &lt;thead&gt;
@@ -857,7 +861,7 @@ most common concerns can be addressed *with metadata*
 
 ---
 
-### where to publish?
+#### where to publish?
 
 .center[
   &lt;img src="reproducibility_assets/figure-html/r3data.png" width="60%"&gt;
@@ -870,7 +874,7 @@ is wonderful but I would start with...
 
 ---
 
-### metadata standards: there are many
+#### metadata standards: there are many
 
 .center[
   &lt;img src="reproducibility_assets/figure-html/metadata_standards_list.png" width="90%"&gt;
@@ -879,7 +883,7 @@ is wonderful but I would start with...
 
 ---
 
-### metadata standards: what is a standard?
+#### metadata standards: what is a standard?
 
 standards provides a structure to describe data with:
 - common terms to allow consistency between records
@@ -898,7 +902,7 @@ in search and retrieval, standards provide:
 
 ---
 
-### metadata standards: a blueprint
+#### metadata standards: a blueprint
 
 *example for a house*
 
@@ -943,7 +947,7 @@ house:&lt;br&gt;
 
 ---
 
-### metadata standards: a blueprint
+#### metadata standards: a blueprint
 
 *example for ecological data*
 
@@ -972,7 +976,7 @@ house:&lt;br&gt;
 
 ---
 
-### metadata: the who, what, why, where, when
+#### metadata: the who, what, why, where, when
 
 - principal investigator
 - funding sources
@@ -1004,7 +1008,7 @@ house:&lt;br&gt;
 
 ---
 
-### what makes good metatadata?
+#### what makes good metatadata?
 
 - consistency with commonly used fields (e.g., YYYY-MM-DD)
 - use a standard vocubulary
@@ -1026,7 +1030,7 @@ house:&lt;br&gt;
 
 ---
 
-### a special note about titles
+#### a special note about titles
 
 .center[
   &lt;img src="reproducibility_assets/figure-html/recently_added_titles.png" width="100%"&gt;
@@ -1034,7 +1038,7 @@ house:&lt;br&gt;
 
 ---
 
-### orcid
+#### orcid
 
 .center[
   &lt;img src="reproducibility_assets/figure-html/orcid.png" width="50%"&gt;
