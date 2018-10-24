@@ -24,6 +24,56 @@ library(tidyverse)
 library(kableExtra)
 ```
 
+#### research data workflow: this is your world (or it will be soon)
+
+<img src="reproducibility_assets/figure-html/workflow.png" width="100%">
+
+.footnote[J. Bryan from http://stat545.com/]
+
+
+---
+
+* how do you keep that up-to-date?
+
+--
+
+* what if something changes, what if something needs to be redone - how do you manage that?
+
+--
+
+* why do the results in table 1 not seem to correspond to the results in figure 1?
+
+--
+
+* why were those particular samples omitted?
+
+--
+
+* where did I get these data?
+
+--
+
+* how did I make that figure?
+
+
+---
+background-image: url(https://media.giphy.com/media/MEtSuIu6qu0HC/giphy.gif)
+background-position: 50% 80%
+background-size: 50%
+
+**basically, if the thought of redoing your analyses is terrifying then you are doing it wrong (paraphrasing Jenny Bryan)** 😱
+
+
+---
+
+#### research data workflow: this is your world (or it will be soon) - .light-blue[now add to that publishing your data and code]
+
+<img src="reproducibility_assets/figure-html/workflow_with_data.png" width="100%">
+
+.footnote[J. Bryan from http://stat545.com/]
+
+
+---
 
 #### reproducibility
 
@@ -38,46 +88,6 @@ library(kableExtra)
 * Replicability and reproducibility are two foundational characteristics of a successful scientific research enterprise. 
 
 .footnote[R. Peng [The reproducibility crisis in science: A statistical counterattack](10.1111/j.1740-9713.2015.00827.x)]
-
-
----
-
-a crisis...
-
-<img src="reproducibility_assets/figure-html/reproCrisisPNAS.png" width="100%">
-
-
----
-
-Duke cancer...
-
-.pull-left[
-  <img src="reproducibility_assets/figure-html/potti.png" width="100%">
-]
-
-.pull-right[
-  <img src="reproducibility_assets/figure-html/baggerly_coombes.png" width="100%">
-]
-
-
----
-
-herndon on Reinhart and Rogoff
-
-<img src="reproducibility_assets/figure-html/herndon.png" width="100%">
-
-
----
-
-Cornell
-
-.pull-left[
-  <img src="reproducibility_assets/figure-html/wansink.png" width="100%">
-]
-
-.pull-right[
-  <img src="reproducibility_assets/figure-html/zeeetal_wansink.png" width="100%">
-]
 
 
 ---
@@ -99,75 +109,19 @@ Cornell
 
 
 ---
+<!-- background-color: #D3D3D3 -->
 
 #### reproducibility, for personal reasons
 
-* "Did I mention that subjects with IDs > 100 are actually kangaroos and should be excluded?"
+* Did I mention that subjects with IDs > 100 are actually kangaroos and should be excluded?
 
-* "I won the lottery 👏 - now my coworker is taking over"
+* I won the lottery 👏 - now my coworker is taking over
 
-* "Journal reviews back after 8 months! Time for revisions!"
+* Journal reviews back after 8 months! Time for revisions!
 
-* "How does that patient have 15 months of treatment when we only followed people for 12 months?"
+* How does that patient have 15 months of treatment when we only followed people for 12 months?
   
 .footnote[J. Thompson [bit.ly/jlt-rmed2018](bit.ly/jlt-rmed2018)]
-
-
----
-
-#### research data workflow: this is your world (or it will be soon)
-
-<img src="reproducibility_assets/figure-html/workflow.png" width="100%">
-
-.footnote[J. Bryan from http://stat545.com/]
-
-
----
-
-<br>
-<br>
-<br>
-
-* how do you keep that up-to-date?
-
-* what if something changes, what if something needs to be redone - how do you manage that?
-
-* why do the results in table 1 not seem to correspond to the results in figure 1?
-
-* why were those particular samples omitted?
-
-* where did I get these data?
-
-* how did I make that figure?
-
-**basically, if the thought of redoing your analyses is terrifying then you are doing it wrong (paraphrasing Jenny Bryan)** 😱
-
-
----
-
-<!--
-background-image: url(https://media.giphy.com/media/MEtSuIu6qu0HC/giphy.gif)
-background-position: 50% 80%
-background-size: 50%
--->
-
-* how do you keep that up-to-date?
-* what if something changes, what if something needs to be redone - how do you manage that?
-* why do the results in table 1 not seem to correspond to the results in figure 1?
-* why were those particular samples omitted?
-* where did I get these data?
-* how did I make that figure?
-
-**basically, if the thought of redoing your analyses is terrifying then you are doing it wrong (paraphrasing Jenny Bryan)** 😱
-
-
----
-
-#### research data workflow: this is your world (or it will be soon) - .light-blue[now add to that publishing your data and code]
-
-<img src="reproducibility_assets/figure-html/workflow_with_data.png" width="100%">
-
-.footnote[J. Bryan from http://stat545.com/]
 
 
 ---
@@ -264,13 +218,14 @@ use the ISO 8601 standard for dates (YYYY-MM-DD) everwhere, always without excep
 ]
 
 .pull-right[
+.small[
 * segregate all materials for a project in one directory
 * organize according to prevailing conventions (e.g., R package structure)
 * maintain a clear separation of data, method, and output while unambiguously expressing the relationship among them
 * specify the computational environment used for the original analysis
 * organize such that another person can know what to expect from the plain meaning of the file and directory names
 * include README files
-]
+]]
 
 .footnote[K. Broman [Steps toward reproducible research](bit.ly/jsm2016)]
 
@@ -319,7 +274,7 @@ use the ISO 8601 standard for dates (YYYY-MM-DD) everwhere, always without excep
 ```{r, echo=FALSE}
 
 knitr::kable(head(iris, format = "html")) %>%
-  kable_styling(full_width = F, font_size = 14)
+  kable_styling(full_width = F, font_size = 12)
 ```
 ]
 
@@ -327,7 +282,7 @@ knitr::kable(head(iris, format = "html")) %>%
 ```{r, echo=FALSE, message=FALSE}
 
 knitr::kable(head(gather(head(iris), key = "metric", value = "value", -Species), n=10)) %>% 
-  kable_styling(full_width = F, font_size = 14)
+  kable_styling(full_width = F, font_size = 12)
 ```
 ]
 
@@ -401,13 +356,9 @@ the beauty and the travesty of spreadsheets is that they allow you to do just ab
 
 ]
 
+--
 
-
-
-
-.center[
-  **use open file formats (e.g., CSV, not XLSX)**
-]
+**BP: use open file formats (e.g., CSV, not XLSX)**
 
 .footnote[J. Bryan [Spreadsheets](https://speakerdeck.com/jennybc/spreadsheets)]
 
@@ -426,8 +377,9 @@ consider, we want to remove samples that we feel may have been contaminated...
   some work...
   ```
   
-  *comment code:*
-  .light-blue[remove samples 4 and 5 that may have been compromised due to wading upstream during sampling]
+
+.small[*comment code:*
+.light-blue[remove samples 4 and 5 that may have been compromised due to wading upstream during sampling]]
   
   ```r
   chemistry_data %>%
@@ -524,6 +476,7 @@ helps us to tame the chaos 👏
 ---
 
 #### version control: Git
+background-color: #E8E8E8
 
 .center[
   <img src="reproducibility_assets/figure-html/bokis_on_git.png" width="80%">
@@ -534,23 +487,16 @@ helps us to tame the chaos 👏
 
 #### I am not saying it is easy
 
-Kieran Healy on two revolutions in computing:
-
-"On one side, the mobile, cloud-centered, touch-screen, phone-or-tablet model has brought powerful computing to more people than ever before."
-
-"On the other side, tools for coding, data analysis, and writing are also revolutionary but mostly work by gluing together separate, specialized widgets that do much less to hide the operation system layer, and require knowledge of things like the file system."
-
-
-.footnote[K. Healy [The Plain Person's Guide to Plain Text Social Science](https://kieranhealy.org/files/papers/plain-person-text.pdf)]
+background-image: url(https://media.giphy.com/media/PnXRAFOJFCt3i/giphy.gif)
+background-position: 50% 80%
+background-size: 40%
 
 
 ---
 
-<!--
 background-image: url(https://media.giphy.com/media/PnXRAFOJFCt3i/giphy.gif)
 background-position: 50% 80%
 background-size: 40%
--->
 
 #### I am not saying it is easy
 
@@ -893,6 +839,7 @@ house:<br>
 
 .footnote[[DataONE education modules](https://www.dataone.org/education-modules)]
 
+
 ---
 
 #### a special note about titles
@@ -900,6 +847,7 @@ house:<br>
 .center[
   <img src="reproducibility_assets/figure-html/recently_added_titles.png" width="100%">
 ]
+
 
 ---
 
@@ -910,3 +858,48 @@ house:<br>
 ]
 
 [orcid.org](https://orcid.org/)
+
+
+---
+
+# new stuff
+
+
+---
+
+a crisis...
+
+<img src="reproducibility_assets/figure-html/reproCrisisPNAS.png" width="100%">
+
+
+---
+
+Duke cancer...
+
+.pull-left[
+  <img src="reproducibility_assets/figure-html/potti.png" width="100%">
+]
+
+.pull-right[
+  <img src="reproducibility_assets/figure-html/baggerly_coombes.png" width="100%">
+]
+
+
+---
+
+herndon on Reinhart and Rogoff
+
+<img src="reproducibility_assets/figure-html/herndon.png" width="100%">
+
+
+---
+
+Cornell
+
+.pull-left[
+  <img src="reproducibility_assets/figure-html/wansink.png" width="100%">
+]
+
+.pull-right[
+  <img src="reproducibility_assets/figure-html/zeeetal_wansink.png" width="100%">
+]
