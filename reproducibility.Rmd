@@ -1,5 +1,5 @@
 ---
-title: "data management, publication, and reproducibility OR reproducibility in science"
+title: "Reproducible research from project inception through publication: best practices for managing research data"
 subtitle: FALSE
 author: FALSE
 date: "2018-10-31"
@@ -60,6 +60,7 @@ library(kableExtra)
 background-image: url(https://media.giphy.com/media/MEtSuIu6qu0HC/giphy.gif)
 background-position: 50% 50%
 background-size: 50%
+class: inverse
 
 **basically, if the thought of redoing your analyses is terrifying then you are doing it wrong (paraphrasing Jenny Bryan)** 😱
 
@@ -131,7 +132,7 @@ background-size: 50%
   + naming
   + organiztion
   + scripting
-* spreadsheets
+* spreadsheets (and other pointy, clicky stuff)
 * literate programming
 * version control
 * getting started
@@ -169,7 +170,6 @@ background-size: 50%
 - 11_file_name.csv
 - 2_file_name.csv
 ]
-
 .pull-right[
 
 - 01_file_name.csv
@@ -179,12 +179,15 @@ background-size: 50%
 
 
 ---
+class: inverse
 
 #### BP: naming - names matter in times of stress
 
 which set of file(names)s would you prefer at 3 a.m. before a dealine?
 
-<img src="reproducibility_assets/figure-html/good_bad_names.png" width="80%">
+.center[
+  <img src="reproducibility_assets/figure-html/good_bad_names.png" width="80%">
+]
 
 .footnote[J. Bryan [Naming things](https://speakerdeck.com/jennybc/how-to-name-files)]
 
@@ -234,6 +237,10 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 
 * save the raw data
 
+.center[
+  <img src="reproducibility_assets/figure-html/Fleetwood-Mac-Cant-Go-Back-Love.jpg" width="80%">
+]
+
 .footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
 
 
@@ -244,7 +251,7 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 * curate your data in a way that you would like to receive it
 
 .center[
-  <img src="reproducibility_assets/figure-html/usgs.png" width="80%">
+  <img src="/home/srearl/localRepos/science_mathematics_seminar/reproducibility_assets/figure-html" width="80%">
 ]
 
 .footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
@@ -255,6 +262,13 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 #### BP: open file formats
 
 * use open file formats (e.g., csv not xlsx)
+
+<br>
+<br>
+
+.center[
+  <img src="reproducibility_assets/figure-html/paperclip.jpeg" width="50%">
+]
 
 .footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
 
@@ -300,9 +314,9 @@ knitr::kable(head(gather(head(iris), key = "metric", value = "value", -Species),
 
 .light-blue[The most basic principle for reproducible research is: **do everything via code**]
 
-* downloading data from the web, 
-* converting an Excel file to CSV,
-* renaming columns or variables, 
+* downloading data from the web 
+* converting an Excel file to CSV
+* renaming columns or variables 
 * omitting bad samples or data points
 * *...do all of these with programatically*
 
@@ -472,7 +486,7 @@ helps us to tame the chaos 👏
 
 
 ---
-background-color: #E8E8E8
+class: inverse
 
 #### version control: Git
 
@@ -642,6 +656,7 @@ most common concerns can be addressed *with metadata*
 
 
 ---
+class: inverse
 
 <br>
 <br>
@@ -668,7 +683,7 @@ dataRepo <- data.frame(
 knitr::kable(dataRepo, format = "html")
 ```
 
-.small[*KNB (the Knowledge Network for Biocomplexity) is an international repository intended to facilitate ecological and environmental research]
+.small[\*KNB (the Knowledge Network for Biocomplexity) is an international repository intended to facilitate ecological and environmental research]
 
 .footnote[[NCEAS crescynt-training](https://nceas.github.io/crescynt-training/)]
 
@@ -716,78 +731,6 @@ in search and retrieval, standards provide:
 
 ---
 
-#### metadata standards: a blueprint
-
-*example for a house*
-
-.less-left[
-
-house:<br>
-&nbsp;parcel_number:<br>
-&nbsp;roof:<br>
-&nbsp;&nbsp;type: shingle, shake, tile<br>
-&nbsp;&nbsp;color:<br>
-&nbsp;wall:<br>
-&nbsp;&nbsp;exterior_wall:<br>
-&nbsp;&nbsp;&nbsp;type: block, vinyl, stucco<br>
-&nbsp;&nbsp;&nbsp;color:<br>
-&nbsp;&nbsp;interior_wall:<br>
-&nbsp;&nbsp;&nbsp;color:<br>
-
-]
-
-.more-right[
-
-```xml
-<house>
-  <parcel_number>45.658</parcel_number>
-  <roof>
-    <type>tile</type>
-    <color>rustic red</color>
-  </roof>
-  <wall>
-    <exterior_wall>
-      <type>block</type>
-      <color>swiss coffee</color>
-    </exterior_wall>
-    <interior_wall>
-      <color>almond butter</color>
-    </interior_wall>
- </wall>
-</house>
-```
-]
-
-
----
-
-#### metadata standards: a blueprint
-
-*example for ecological data*
-
-```xml
-<attribute>
-  <attributeName>stem_diameter</attributeName>
-  <attributeDefinition>stem diameter</attributeDefinition>
-  <storageType>float</storageType>
-  <measurementScale>
-    <ratio>
-      <unit>
-        <standardUnit>centimeter</standardUnit>
-      </unit>
-      <numericDomain>
-        <numberType>real</numberType>
-      </numericDomain>
-    </ratio>
-  </measurementScale>
-  <missingValueCode>
-    <code>NA</code>
-    <codeExplanation>missing value</codeExplanation>
-  </missingValueCode>
-</attribute>
-```
-
-
 ---
 
 #### metadata: the who, what, why, where, when
@@ -809,6 +752,7 @@ house:<br>
 
 
 ---
+class: inverse
 
 <br>
 <br>
@@ -906,3 +850,79 @@ Cornell
 .pull-right[
   <img src="reproducibility_assets/figure-html/zeeetal_wansink.png" width="100%">
 ]
+
+---
+
+#### metadata standards: a blueprint
+
+*example for a house*
+
+.less-left[
+
+house:<br>
+&nbsp;parcel_number:<br>
+&nbsp;roof:<br>
+&nbsp;&nbsp;type: shingle, shake, tile<br>
+&nbsp;&nbsp;color:<br>
+&nbsp;wall:<br>
+&nbsp;&nbsp;exterior_wall:<br>
+&nbsp;&nbsp;&nbsp;type: block, vinyl, stucco<br>
+&nbsp;&nbsp;&nbsp;color:<br>
+&nbsp;&nbsp;interior_wall:<br>
+&nbsp;&nbsp;&nbsp;color:<br>
+
+]
+
+.more-right[
+
+```xml
+<house>
+  <parcel_number>45.658</parcel_number>
+  <roof>
+    <type>tile</type>
+    <color>rustic red</color>
+  </roof>
+  <wall>
+    <exterior_wall>
+      <type>block</type>
+      <color>swiss coffee</color>
+    </exterior_wall>
+    <interior_wall>
+      <color>almond butter</color>
+    </interior_wall>
+ </wall>
+</house>
+```
+]
+
+
+---
+
+#### metadata standards: a blueprint
+
+*example for ecological data*
+
+```xml
+<attribute>
+  <attributeName>stem_diameter</attributeName>
+  <attributeDefinition>stem diameter</attributeDefinition>
+  <storageType>float</storageType>
+  <measurementScale>
+    <ratio>
+      <unit>
+        <standardUnit>centimeter</standardUnit>
+      </unit>
+      <numericDomain>
+        <numberType>real</numberType>
+      </numericDomain>
+    </ratio>
+  </measurementScale>
+  <missingValueCode>
+    <code>NA</code>
+    <codeExplanation>missing value</codeExplanation>
+  </missingValueCode>
+</attribute>
+```
+
+
+

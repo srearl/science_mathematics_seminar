@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>data management, publication, and reproducibility OR reproducibility in science</title>
+    <title>Reproducible research from project inception through publication: best practices for managing research data</title>
     <meta charset="utf-8">
     <meta name="date" content="2018-10-31" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
@@ -13,7 +13,7 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# data management, publication, and reproducibility OR reproducibility in science
+# Reproducible research from project inception through publication: best practices for managing research data
 ### 2018-10-31
 
 ---
@@ -59,6 +59,7 @@ class: center, middle, inverse, title-slide
 background-image: url(https://media.giphy.com/media/MEtSuIu6qu0HC/giphy.gif)
 background-position: 50% 50%
 background-size: 50%
+class: inverse
 
 **basically, if the thought of redoing your analyses is terrifying then you are doing it wrong (paraphrasing Jenny Bryan)** 😱
 
@@ -130,7 +131,7 @@ background-size: 50%
   + naming
   + organiztion
   + scripting
-* spreadsheets
+* spreadsheets (and other pointy, clicky stuff)
 * literate programming
 * version control
 * getting started
@@ -168,7 +169,6 @@ background-size: 50%
 - 11_file_name.csv
 - 2_file_name.csv
 ]
-
 .pull-right[
 
 - 01_file_name.csv
@@ -178,12 +178,15 @@ background-size: 50%
 
 
 ---
+class: inverse
 
 #### BP: naming - names matter in times of stress
 
 which set of file(names)s would you prefer at 3 a.m. before a dealine?
 
-&lt;img src="reproducibility_assets/figure-html/good_bad_names.png" width="80%"&gt;
+.center[
+  &lt;img src="reproducibility_assets/figure-html/good_bad_names.png" width="80%"&gt;
+]
 
 .footnote[J. Bryan [Naming things](https://speakerdeck.com/jennybc/how-to-name-files)]
 
@@ -233,6 +236,10 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 
 * save the raw data
 
+.center[
+  &lt;img src="reproducibility_assets/figure-html/Fleetwood-Mac-Cant-Go-Back-Love.jpg" width="80%"&gt;
+]
+
 .footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
 
 
@@ -243,7 +250,7 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 * curate your data in a way that you would like to receive it
 
 .center[
-  &lt;img src="reproducibility_assets/figure-html/usgs.png" width="80%"&gt;
+  &lt;img src="/home/srearl/localRepos/science_mathematics_seminar/reproducibility_assets/figure-html" width="80%"&gt;
 ]
 
 .footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
@@ -254,6 +261,13 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 #### BP: open file formats
 
 * use open file formats (e.g., csv not xlsx)
+
+&lt;br&gt;
+&lt;br&gt;
+
+.center[
+  &lt;img src="reproducibility_assets/figure-html/paperclip.jpeg" width="50%"&gt;
+]
 
 .footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
 
@@ -405,9 +419,9 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 
 .light-blue[The most basic principle for reproducible research is: **do everything via code**]
 
-* downloading data from the web, 
-* converting an Excel file to CSV,
-* renaming columns or variables, 
+* downloading data from the web 
+* converting an Excel file to CSV
+* renaming columns or variables 
 * omitting bad samples or data points
 * *...do all of these with programatically*
 
@@ -577,7 +591,7 @@ helps us to tame the chaos 👏
 
 
 ---
-background-color: #E8E8E8
+class: inverse
 
 #### version control: Git
 
@@ -673,6 +687,15 @@ strive for reproducibility from the outset
 
 
 ---
+
+#### research data workflow: this is your world (or it will be soon) - .light-blue[now add to that publishing your data and code]
+
+&lt;img src="reproducibility_assets/figure-html/workflow_with_data.png" width="100%"&gt;
+
+.footnote[J. Bryan from http://stat545.com/]
+
+
+---
 &lt;!-- this starts the metadata + publishing lecture --&gt;
 
 #### why publish data
@@ -738,6 +761,7 @@ most common concerns can be addressed *with metadata*
 
 
 ---
+class: inverse
 
 &lt;br&gt;
 &lt;br&gt;
@@ -794,7 +818,7 @@ most common concerns can be addressed *with metadata*
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-.small[*KNB (the Knowledge Network for Biocomplexity) is an international repository intended to facilitate ecological and environmental research]
+.small[\*KNB (the Knowledge Network for Biocomplexity) is an international repository intended to facilitate ecological and environmental research]
 
 .footnote[[NCEAS crescynt-training](https://nceas.github.io/crescynt-training/)]
 
@@ -842,78 +866,6 @@ in search and retrieval, standards provide:
 
 ---
 
-#### metadata standards: a blueprint
-
-*example for a house*
-
-.less-left[
-
-house:&lt;br&gt;
-&amp;nbsp;parcel_number:&lt;br&gt;
-&amp;nbsp;roof:&lt;br&gt;
-&amp;nbsp;&amp;nbsp;type: shingle, shake, tile&lt;br&gt;
-&amp;nbsp;&amp;nbsp;color:&lt;br&gt;
-&amp;nbsp;wall:&lt;br&gt;
-&amp;nbsp;&amp;nbsp;exterior_wall:&lt;br&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;type: block, vinyl, stucco&lt;br&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;color:&lt;br&gt;
-&amp;nbsp;&amp;nbsp;interior_wall:&lt;br&gt;
-&amp;nbsp;&amp;nbsp;&amp;nbsp;color:&lt;br&gt;
-
-]
-
-.more-right[
-
-```xml
-&lt;house&gt;
-  &lt;parcel_number&gt;45.658&lt;/parcel_number&gt;
-  &lt;roof&gt;
-    &lt;type&gt;tile&lt;/type&gt;
-    &lt;color&gt;rustic red&lt;/color&gt;
-  &lt;/roof&gt;
-  &lt;wall&gt;
-    &lt;exterior_wall&gt;
-      &lt;type&gt;block&lt;/type&gt;
-      &lt;color&gt;swiss coffee&lt;/color&gt;
-    &lt;/exterior_wall&gt;
-    &lt;interior_wall&gt;
-      &lt;color&gt;almond butter&lt;/color&gt;
-    &lt;/interior_wall&gt;
- &lt;/wall&gt;
-&lt;/house&gt;
-```
-]
-
-
----
-
-#### metadata standards: a blueprint
-
-*example for ecological data*
-
-```xml
-&lt;attribute&gt;
-  &lt;attributeName&gt;stem_diameter&lt;/attributeName&gt;
-  &lt;attributeDefinition&gt;stem diameter&lt;/attributeDefinition&gt;
-  &lt;storageType&gt;float&lt;/storageType&gt;
-  &lt;measurementScale&gt;
-    &lt;ratio&gt;
-      &lt;unit&gt;
-        &lt;standardUnit&gt;centimeter&lt;/standardUnit&gt;
-      &lt;/unit&gt;
-      &lt;numericDomain&gt;
-        &lt;numberType&gt;real&lt;/numberType&gt;
-      &lt;/numericDomain&gt;
-    &lt;/ratio&gt;
-  &lt;/measurementScale&gt;
-  &lt;missingValueCode&gt;
-    &lt;code&gt;NA&lt;/code&gt;
-    &lt;codeExplanation&gt;missing value&lt;/codeExplanation&gt;
-  &lt;/missingValueCode&gt;
-&lt;/attribute&gt;
-```
-
-
 ---
 
 #### metadata: the who, what, why, where, when
@@ -935,6 +887,7 @@ house:&lt;br&gt;
 
 
 ---
+class: inverse
 
 &lt;br&gt;
 &lt;br&gt;
@@ -1032,6 +985,79 @@ Cornell
 .pull-right[
   &lt;img src="reproducibility_assets/figure-html/zeeetal_wansink.png" width="100%"&gt;
 ]
+
+---
+
+#### metadata standards: a blueprint
+
+*example for a house*
+
+.less-left[
+
+house:&lt;br&gt;
+&amp;nbsp;parcel_number:&lt;br&gt;
+&amp;nbsp;roof:&lt;br&gt;
+&amp;nbsp;&amp;nbsp;type: shingle, shake, tile&lt;br&gt;
+&amp;nbsp;&amp;nbsp;color:&lt;br&gt;
+&amp;nbsp;wall:&lt;br&gt;
+&amp;nbsp;&amp;nbsp;exterior_wall:&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;type: block, vinyl, stucco&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;color:&lt;br&gt;
+&amp;nbsp;&amp;nbsp;interior_wall:&lt;br&gt;
+&amp;nbsp;&amp;nbsp;&amp;nbsp;color:&lt;br&gt;
+
+]
+
+.more-right[
+
+```xml
+&lt;house&gt;
+  &lt;parcel_number&gt;45.658&lt;/parcel_number&gt;
+  &lt;roof&gt;
+    &lt;type&gt;tile&lt;/type&gt;
+    &lt;color&gt;rustic red&lt;/color&gt;
+  &lt;/roof&gt;
+  &lt;wall&gt;
+    &lt;exterior_wall&gt;
+      &lt;type&gt;block&lt;/type&gt;
+      &lt;color&gt;swiss coffee&lt;/color&gt;
+    &lt;/exterior_wall&gt;
+    &lt;interior_wall&gt;
+      &lt;color&gt;almond butter&lt;/color&gt;
+    &lt;/interior_wall&gt;
+ &lt;/wall&gt;
+&lt;/house&gt;
+```
+]
+
+
+---
+
+#### metadata standards: a blueprint
+
+*example for ecological data*
+
+```xml
+&lt;attribute&gt;
+  &lt;attributeName&gt;stem_diameter&lt;/attributeName&gt;
+  &lt;attributeDefinition&gt;stem diameter&lt;/attributeDefinition&gt;
+  &lt;storageType&gt;float&lt;/storageType&gt;
+  &lt;measurementScale&gt;
+    &lt;ratio&gt;
+      &lt;unit&gt;
+        &lt;standardUnit&gt;centimeter&lt;/standardUnit&gt;
+      &lt;/unit&gt;
+      &lt;numericDomain&gt;
+        &lt;numberType&gt;real&lt;/numberType&gt;
+      &lt;/numericDomain&gt;
+    &lt;/ratio&gt;
+  &lt;/measurementScale&gt;
+  &lt;missingValueCode&gt;
+    &lt;code&gt;NA&lt;/code&gt;
+    &lt;codeExplanation&gt;missing value&lt;/codeExplanation&gt;
+  &lt;/missingValueCode&gt;
+&lt;/attribute&gt;
+```
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
