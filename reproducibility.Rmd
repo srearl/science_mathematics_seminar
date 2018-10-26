@@ -62,7 +62,7 @@ background-position: 50% 50%
 background-size: 50%
 class: inverse
 
-**basically, if the thought of redoing your analyses is terrifying then you are doing it wrong (paraphrasing Jenny Bryan)** 😱
+**basically, if the thought of redoing your analyses is terrifying 😱 then you are doing it wrong (paraphrasing Jenny Bryan)** 
 
 
 ---
@@ -82,11 +82,10 @@ class: inverse
 
 * The **replicability** of a study is related to the chance that an independent experiment targeting the same scientific question will produce a result consistent with the original study. 
 
-* Recently, a variation of this concept, referred to as reproducibility, has emerged as a key minimum acceptable standard, especially for heavily computational research. 
+* A variation of this concept, referred to as reproducibility, has emerged as a key minimum acceptable standard, especially for heavily computational research. 
 
-* *Reproducibility is defined as the ability to recompute data analytic results, given an observed data set and knowledge of the data analysis pipeline.* 
+* **Reproducibility** is defined as the ability to recompute data analytic results, given an observed data set and knowledge of the data analysis pipeline. 
 
-* Replicability and reproducibility are two foundational characteristics of a successful scientific research enterprise. 
 
 .footnote[R. Peng [The reproducibility crisis in science: A statistical counterattack](10.1111/j.1740-9713.2015.00827.x)]
 
@@ -135,14 +134,20 @@ class: inverse
 * spreadsheets (and other pointy, clicky stuff)
 * literate programming
 * version control
-* getting started
 * data management plans
 * publishing data
 
 
 ---
 
-#### BP [Best Practice]: naming things - principles for file names
+#### BP [Best Practice]
+
+
+---
+
+#### BP: naming things - principles for file names
+
+--
 
 * machine readable
 
@@ -251,7 +256,7 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 * curate your data in a way that you would like to receive it
 
 .center[
-  <img src="/home/srearl/localRepos/science_mathematics_seminar/reproducibility_assets/figure-html" width="80%">
+  <img src="/home/srearl/localRepos/science_mathematics_seminar/reproducibility_assets/figure-html/usgs.png" width="80%">
 ]
 
 .footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
@@ -302,6 +307,10 @@ knitr::kable(head(gather(head(iris), key = "metric", value = "value", -Species),
 
 
 ---
+background-image: url(https://media.giphy.com/media/3orif8zlUQh32KTURy/giphy.gif)
+background-position: 50% 50%
+background-size: 50%
+class: inverse
 
 #### BP: record everything
 
@@ -437,8 +446,21 @@ a common approach
 
 .footnote[K. Healy [The Plain Person's Guide to Plain Text Social Science](https://kieranhealy.org/files/papers/plain-person-text.pdf)]
 
+---
+
+#### literate programming
+
+.pull-left[
+  <img src="reproducibility_assets/figure-html/Rmarkdown.png" width="90%">
+]
+
+.pull-left[
+  <img src="reproducibility_assets/figure-html/Rmd_to_Word.png" width="90%">
+]
+
 
 ---
+class: inverse
 
 #### version control
 
@@ -449,7 +471,7 @@ a common approach
 
 ---
 
-#### version control: Git
+#### version control: git
 
 * git watches repositories (like a directory) for changes
 * git asks that you describe changes when they are made
@@ -461,7 +483,7 @@ a common approach
 
 ---
 
-#### version control: Git + GitHub 
+#### version control: git + GitHub 
 
 when combined with a service such as GitHub
 
@@ -475,12 +497,11 @@ when combined with a service such as GitHub
 
 ---
 
-#### version control: Git
+#### version control: git
 
-helps us to tame the chaos 👏
+.light-blue[tame the chaos] 👏
 
 .center[
-
   <img src="reproducibility_assets/figure-html/git_flow.png" width="80%">
 ]
 
@@ -488,8 +509,7 @@ helps us to tame the chaos 👏
 ---
 class: inverse
 
-#### version control: Git
-
+#### version control: git
 
 .center[
   <img src="reproducibility_assets/figure-html/bokis_on_git.png" width="80%">
@@ -499,7 +519,8 @@ class: inverse
 ---
 background-image: url(https://media.giphy.com/media/PnXRAFOJFCt3i/giphy.gif)
 background-position: 50% 50%
-background-size: 40%
+background-size: 50%
+class: inverse
 
 #### I am not saying it is easy
 
@@ -516,6 +537,26 @@ Kieran Healy on two revolutions in computing:
 
 
 .footnote[K. Healy [The Plain Person's Guide to Plain Text Social Science](https://kieranhealy.org/files/papers/plain-person-text.pdf)]
+
+
+---
+
+#### I am not saying it is easy
+
+Very few people are trained in both data analysis and biology.
+
+The practical and pragmatic issues of data analysis and data interpretation are not something that is taught at undergrad or graduate school level.
+
+Most senior faculty do not know how to do this.
+
+Nor do many junior faculty.
+
+But our field increasingly *depends* on skilled interpretation of private + public data.
+
+So how do we address this? Many layers, many approaches…
+
+
+.footnote[Brown, C. Titus et al. [“2017 - Data Intensive Biology Summer Institute.”](https://osf.io/pyvfg/)]
 
 
 ---
@@ -724,12 +765,9 @@ in search and retrieval, standards provide:
 - documentation structure in a reliable and predictable format for computer interpretation
 - a uniform summary description of the dataset
 
-<!-- <p style="color:#00BFFF">...like a blueprint for the structure of information</p> -->
 
 .footnote[[DataONE education modules](https://www.dataone.org/education-modules)]
 
-
----
 
 ---
 
@@ -777,12 +815,12 @@ class: inverse
 - use descriptive and clear writing
 - fully document geographic locations
 - use keywords wisely (use a thesausus when possible)
-- detail, there is no such thing as too much!
 - remember that a computer will read this:
   + avoid special characters
   + avoid tabs, indents, carriage returns
   + copy from a text file (not a file with rich text like Word or RTF)
 
+.light-blue[**detail, there is no such thing as too much!**]
 
 .footnote[[DataONE education modules](https://www.dataone.org/education-modules)]
 
@@ -805,124 +843,4 @@ class: inverse
 ]
 
 [orcid.org](https://orcid.org/)
-
-
----
-
-# new stuff
-
-
----
-
-a crisis...
-
-<img src="reproducibility_assets/figure-html/reproCrisisPNAS.png" width="100%">
-
-
----
-
-Duke cancer...
-
-.pull-left[
-  <img src="reproducibility_assets/figure-html/potti.png" width="100%">
-]
-
-.pull-right[
-  <img src="reproducibility_assets/figure-html/baggerly_coombes.png" width="100%">
-]
-
-
----
-
-herndon on Reinhart and Rogoff
-
-<img src="reproducibility_assets/figure-html/herndon.png" width="100%">
-
-
----
-
-Cornell
-
-.pull-left[
-  <img src="reproducibility_assets/figure-html/wansink.png" width="100%">
-]
-
-.pull-right[
-  <img src="reproducibility_assets/figure-html/zeeetal_wansink.png" width="100%">
-]
-
----
-
-#### metadata standards: a blueprint
-
-*example for a house*
-
-.less-left[
-
-house:<br>
-&nbsp;parcel_number:<br>
-&nbsp;roof:<br>
-&nbsp;&nbsp;type: shingle, shake, tile<br>
-&nbsp;&nbsp;color:<br>
-&nbsp;wall:<br>
-&nbsp;&nbsp;exterior_wall:<br>
-&nbsp;&nbsp;&nbsp;type: block, vinyl, stucco<br>
-&nbsp;&nbsp;&nbsp;color:<br>
-&nbsp;&nbsp;interior_wall:<br>
-&nbsp;&nbsp;&nbsp;color:<br>
-
-]
-
-.more-right[
-
-```xml
-<house>
-  <parcel_number>45.658</parcel_number>
-  <roof>
-    <type>tile</type>
-    <color>rustic red</color>
-  </roof>
-  <wall>
-    <exterior_wall>
-      <type>block</type>
-      <color>swiss coffee</color>
-    </exterior_wall>
-    <interior_wall>
-      <color>almond butter</color>
-    </interior_wall>
- </wall>
-</house>
-```
-]
-
-
----
-
-#### metadata standards: a blueprint
-
-*example for ecological data*
-
-```xml
-<attribute>
-  <attributeName>stem_diameter</attributeName>
-  <attributeDefinition>stem diameter</attributeDefinition>
-  <storageType>float</storageType>
-  <measurementScale>
-    <ratio>
-      <unit>
-        <standardUnit>centimeter</standardUnit>
-      </unit>
-      <numericDomain>
-        <numberType>real</numberType>
-      </numericDomain>
-    </ratio>
-  </measurementScale>
-  <missingValueCode>
-    <code>NA</code>
-    <codeExplanation>missing value</codeExplanation>
-  </missingValueCode>
-</attribute>
-```
-
-
 
