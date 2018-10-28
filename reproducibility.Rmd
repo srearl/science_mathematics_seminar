@@ -193,7 +193,7 @@ class: inverse
 which set of file(names)s would you prefer at 3 a.m. before a dealine?
 
 .center[
-  <img src="reproducibility_assets/figure-html/good_bad_names.png" width="80%">
+  <img src="reproducibility_assets/figure-html/good_bad_names.png" width="85%">
 ]
 
 .footnote[J. Bryan [Naming things](https://speakerdeck.com/jennybc/how-to-name-files)]
@@ -502,40 +502,6 @@ class: inverse
 
 ---
 
-#### I am not saying it is easy
-
-Kieran Healy on two revolutions in computing:
-
-"On one side, the mobile, cloud-centered, touch-screen, phone-or-tablet model has brought powerful computing to more people than ever before."
-
-"On the other side, tools for coding, data analysis, and writing are also revolutionary but mostly work by gluing together separate, specialized widgets that do much less to hide the operation system layer, and require knowledge of things like the file system."
-
-
-.footnote[K. Healy [The Plain Person's Guide to Plain Text Social Science](https://kieranhealy.org/files/papers/plain-person-text.pdf)]
-
-
----
-
-#### I am not saying it is easy
-
-Very few people are trained in both data analysis and biology.
-
-The practical and pragmatic issues of data analysis and data interpretation are not something that is taught at undergrad or graduate school level.
-
-Most senior faculty do not know how to do this.
-
-Nor do many junior faculty.
-
-But our field increasingly *depends* on skilled interpretation of private + public data.
-
-So how do we address this? Many layers, many approaches…
-
-
-.footnote[Brown, C. Titus et al. [“2017 - Data Intensive Biology Summer Institute.”](https://osf.io/pyvfg/)]
-
-
----
-
 #### OHI: nature ecology & evolution
 
 .center[
@@ -763,15 +729,6 @@ class: inverse
 
 ---
 
-#### a special note about titles
-
-.center[
-  <img src="reproducibility_assets/figure-html/recently_added_titles.png" width="100%">
-]
-
-
----
-
 #### orcid
 
 .center[
@@ -810,3 +767,40 @@ knitr::kable(head(gather(head(iris), key = "metric", value = "value", -Species),
 
 -->
 
+
+<!--
+
+#### I am not saying it is easy
+
+Kieran Healy on two revolutions in computing:
+
+"On one side, the mobile, cloud-centered, touch-screen, phone-or-tablet model has brought powerful computing to more people than ever before."
+
+"On the other side, tools for coding, data analysis, and writing are also revolutionary but mostly work by gluing together separate, specialized widgets that do much less to hide the operation system layer, and require knowledge of things like the file system."
+
+
+.footnote[K. Healy [The Plain Person's Guide to Plain Text Social Science](https://kieranhealy.org/files/papers/plain-person-text.pdf)]
+
+-->
+
+
+<!--
+
+#### I am not saying it is easy
+
+Very few people are trained in both data analysis and biology.
+
+The practical and pragmatic issues of data analysis and data interpretation are not something that is taught at undergrad or graduate school level.
+
+Most senior faculty do not know how to do this.
+
+Nor do many junior faculty.
+
+But our field increasingly *depends* on skilled interpretation of private + public data.
+
+So how do we address this? Many layers, many approaches…
+
+
+.footnote[Brown, C. Titus et al. [“2017 - Data Intensive Biology Summer Institute.”](https://osf.io/pyvfg/)]
+
+-->
