@@ -281,34 +281,6 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 
 
 ---
-
-#### BP: analysis-friendly data
-
-* create analysis-friendly data:
-  + each column a variable
-  + each row an observation
-
-
-.pull-left[
-```{r, echo=FALSE}
-
-knitr::kable(head(iris, format = "html")) %>%
-  kable_styling(full_width = F, font_size = 12)
-```
-]
-
-.pull-right[
-```{r, echo=FALSE, message=FALSE}
-
-knitr::kable(head(gather(head(iris), key = "metric", value = "value", -Species), n=10)) %>% 
-  kable_styling(full_width = F, font_size = 12)
-```
-]
-
-.footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
-
-
----
 background-image: url(https://media.giphy.com/media/3orif8zlUQh32KTURy/giphy.gif)
 background-position: 50% 50%
 background-size: 50%
@@ -654,20 +626,6 @@ strive for reproducibility from the outset
 
 ---
 
-.pull-left[
-  <img src="reproducibility_assets/figure-html/ClimateGate.png" width="105%">
-]
-
-.pull-right[
-
-"The climate scientists at the centre of a media storm over leaked emails were yesterday cleared of accusations that they fudged their results and silenced critics, but a review found they had failed to be open enough about their work."
-]
-
-.footnote[[NCEAS crescynt-training](https://nceas.github.io/crescynt-training/)]
-
-
----
-
 #### concerns about sharing data
 
 most common concerns can be addressed *with metadata*
@@ -814,33 +772,6 @@ class: inverse
 
 ---
 
-#### metadata standards: there are many
-
-.center[
-  <img src="reproducibility_assets/figure-html/metadata_standards_list.png" width="90%">
-]
-
-
----
-
-#### metadata standards: what is a standard?
-
-standards provides a structure to describe data with:
-- common terms to allow consistency between records
-- common definitions for easier interpretation
-- common language for ease of communication
-- common structure to quickly locate information
-
-in search and retrieval, standards provide:
-- documentation structure in a reliable and predictable format for computer interpretation
-- a uniform summary description of the dataset
-
-
-.footnote[[DataONE education modules](https://www.dataone.org/education-modules)]
-
-
----
-
 #### orcid
 
 .center[
@@ -848,4 +779,34 @@ in search and retrieval, standards provide:
 ]
 
 [orcid.org](https://orcid.org/)
+
+
+<!--
+
+#### BP: analysis-friendly data
+
+* create analysis-friendly data:
+  + each column a variable
+  + each row an observation
+
+
+.pull-left[
+```{r, echo=FALSE}
+
+knitr::kable(head(iris, format = "html")) %>%
+  kable_styling(full_width = F, font_size = 12)
+```
+]
+
+.pull-right[
+```{r, echo=FALSE, message=FALSE}
+
+knitr::kable(head(gather(head(iris), key = "metric", value = "value", -Species), n=10)) %>% 
+  kable_styling(full_width = F, font_size = 12)
+```
+]
+
+.footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
+
+-->
 
