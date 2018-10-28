@@ -56,21 +56,23 @@ class: center, middle, inverse, title-slide
 
 
 ---
-background-image: url(https://media.giphy.com/media/MEtSuIu6qu0HC/giphy.gif)
-background-position: 50% 50%
-background-size: 50%
-class: inverse
-
-**basically, if the thought of redoing your analyses is terrifying 😱 then you are doing it wrong (paraphrasing Jenny Bryan)** 
-
-
----
 
 #### research data workflow: this is your world (or it will be soon) - .light-blue[now add to that publishing your data and code]
 
 &lt;img src="reproducibility_assets/figure-html/workflow_with_data.png" width="100%"&gt;
 
 .footnote[J. Bryan from http://stat545.com/]
+
+
+---
+background-image: url(https://media.giphy.com/media/MEtSuIu6qu0HC/giphy.gif)
+background-position: 50% 50%
+background-size: 50%
+class: inverse
+
+&lt;br&gt;
+
+basically, if the thought of redoing your analyses is terrifying 😱 then you are doing it wrong (paraphrasing Jenny Bryan)
 
 
 ---
@@ -144,7 +146,7 @@ class: inverse
 
 ---
 
-#### BP: naming things - principles for file names
+#### BP: naming things - principles for file (and other things) names
 
 --
 
@@ -242,7 +244,7 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 * save the raw data
 
 .center[
-  &lt;img src="reproducibility_assets/figure-html/Fleetwood-Mac-Cant-Go-Back-Love.jpg" width="80%"&gt;
+  &lt;img src="reproducibility_assets/figure-html/Fleetwood-Mac-Cant-Go-Back-Love.jpg" width="70%"&gt;
 ]
 
 .footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
@@ -255,7 +257,7 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 * curate your data in a way that you would like to receive it
 
 .center[
-  &lt;img src="/home/srearl/localRepos/science_mathematics_seminar/reproducibility_assets/figure-html/usgs.png" width="80%"&gt;
+  &lt;img src="reproducibility_assets/figure-html/usgs.png" width="80%"&gt;
 ]
 
 .footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
@@ -271,7 +273,7 @@ which set of file(names)s would you prefer at 3 a.m. before a dealine?
 &lt;br&gt;
 
 .center[
-  &lt;img src="reproducibility_assets/figure-html/paperclip.jpeg" width="50%"&gt;
+  &lt;img src="reproducibility_assets/figure-html/paperclip.jpeg" width="45%"&gt;
 ]
 
 .footnote[Wilson et al. (2017) [Good enough practices in scientific computing](https://doi.org/10.1371/journal.pcbi.1005510)]
@@ -443,7 +445,7 @@ Some things are more cumbersome via code but you will save time in the long run.
 
 ---
 
-#### BP: learn a language. any language, just do it
+#### BP: learn a language, any language, just do it
 
 .pull-left[
   &lt;img src="reproducibility_assets/figure-html/rlogo.jpg" width="100%"&gt;
@@ -576,7 +578,7 @@ class: inverse
 
 ---
 
-#### version control: Git
+#### version control: git
 
 * git watches repositories (like a directory) for changes
 * git asks that you describe changes when they are made
@@ -588,7 +590,7 @@ class: inverse
 
 ---
 
-#### version control: Git + GitHub 
+#### version control: git + GitHub 
 
 when combined with a service such as GitHub
 
@@ -600,9 +602,10 @@ when combined with a service such as GitHub
 
 .footnote[Jeff Goldsmith ["Git"](https://speakerdeck.com/jeffgoldsmith/dsi-git-and-github)]
 
+
 ---
 
-#### version control: Git
+#### version control: git
 
 .light-blue[tame the chaos] 👏
 
@@ -614,7 +617,7 @@ when combined with a service such as GitHub
 ---
 class: inverse
 
-#### version control: Git
+#### version control: git
 
 .center[
   &lt;img src="reproducibility_assets/figure-html/bokis_on_git.png" width="80%"&gt;
@@ -879,33 +882,6 @@ is wonderful but I would start with...
 
 ---
 
-#### metadata standards: there are many
-
-.center[
-  &lt;img src="reproducibility_assets/figure-html/metadata_standards_list.png" width="90%"&gt;
-]
-
-
----
-
-#### metadata standards: what is a standard?
-
-standards provides a structure to describe data with:
-- common terms to allow consistency between records
-- common definitions for easier interpretation
-- common language for ease of communication
-- common structure to quickly locate information
-
-in search and retrieval, standards provide:
-- documentation structure in a reliable and predictable format for computer interpretation
-- a uniform summary description of the dataset
-
-
-.footnote[[DataONE education modules](https://www.dataone.org/education-modules)]
-
-
----
-
 #### metadata: the who, what, why, where, when
 
 - principal investigator
@@ -941,6 +917,7 @@ class: inverse
 
 #### what makes good metatadata?
 
+.light-grey[
 - consistency with commonly used fields (e.g., YYYY-MM-DD)
 - use a standard vocubulary
 - spell out acronyms
@@ -954,6 +931,7 @@ class: inverse
   + avoid special characters
   + avoid tabs, indents, carriage returns
   + copy from a text file (not a file with rich text like Word or RTF)
+]
 
 .light-blue[**detail, there is no such thing as too much!**]
 
@@ -967,6 +945,33 @@ class: inverse
 .center[
   &lt;img src="reproducibility_assets/figure-html/recently_added_titles.png" width="100%"&gt;
 ]
+
+
+---
+
+#### metadata standards: there are many
+
+.center[
+  &lt;img src="reproducibility_assets/figure-html/metadata_standards_list.png" width="90%"&gt;
+]
+
+
+---
+
+#### metadata standards: what is a standard?
+
+standards provides a structure to describe data with:
+- common terms to allow consistency between records
+- common definitions for easier interpretation
+- common language for ease of communication
+- common structure to quickly locate information
+
+in search and retrieval, standards provide:
+- documentation structure in a reliable and predictable format for computer interpretation
+- a uniform summary description of the dataset
+
+
+.footnote[[DataONE education modules](https://www.dataone.org/education-modules)]
 
 
 ---
