@@ -131,14 +131,16 @@ basically, if the thought of redoing your analyses is terrifying 😱 then you a
 
 * best practices
   + naming
-  + organiztion
+  + open file formats
+  + organization
+  + thoughtful curation
   + scripting
-* spreadsheets (and other pointy, clicky stuff)
-* literate programming
-* version control
+  + spreadsheets (and other pointy, clicky stuff)
+  + version control
 * data management plans
 * publishing data
-
+...
+* literate programming
 
 ---
 
@@ -654,14 +656,14 @@ class: inverse
 
 .light-grey[
 - consistency with commonly used fields (e.g., YYYY-MM-DD)
-- use a standard vocubulary
+- use a standard vocabulary
 - spell out acronyms
 - provide all the critical information for: *identification; entities and attributes; data quality; data lineage; access, use, and liability constraints; accessing the data; spatial reference*
 - complete title: who, what, when, where, and scale
 - be specific, and quantify where possible
 - use descriptive and clear writing
 - fully document geographic locations
-- use keywords wisely (use a thesausus when possible)
+- use keywords wisely (use a thesaurus when possible)
 - remember that a computer will read this:
   + avoid special characters
   + avoid tabs, indents, carriage returns
