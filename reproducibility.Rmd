@@ -116,11 +116,12 @@ basically, if the thought of redoing your analyses is terrifying 😱 then you a
 
 * Did I mention that subjects with IDs > 100 are actually kangaroos and should be excluded?
 
+* How does that patient have 15 months of treatment when we only followed people for 12 months?
+
 * I won the lottery 👏 - now my coworker is taking over
 
 * Journal reviews back after 8 months! Time for revisions!
 
-* How does that patient have 15 months of treatment when we only followed people for 12 months?
   
 .footnote[J. Thompson [bit.ly/jlt-rmed2018](bit.ly/jlt-rmed2018)]
 
@@ -139,7 +140,9 @@ basically, if the thought of redoing your analyses is terrifying 😱 then you a
   + version control
 * data management plans
 * publishing data
+
 ...
+
 * literate programming
 
 ---
@@ -384,7 +387,7 @@ consider, we want to remove samples that we feel may have been contaminated...
 ---
 class: inverse
 
-#### version control
+#### BP: version control
 
 .center[
   <img src="reproducibility_assets/figure-html/CAP_renewal_screenshot.png" width="100%">
@@ -393,7 +396,7 @@ class: inverse
 
 ---
 
-#### version control: git
+#### version control::git
 
 * git watches repositories (like a directory) for changes
 * git asks that you describe changes when they are made
@@ -405,7 +408,7 @@ class: inverse
 
 ---
 
-#### version control: git + GitHub 
+#### git + GitHub 
 
 when combined with a service such as GitHub
 
@@ -686,17 +689,6 @@ class: inverse
 
 ---
 
-#### orcid
-
-.center[
-  <img src="reproducibility_assets/figure-html/orcid.png" width="50%">
-]
-
-[orcid.org](https://orcid.org/)
-
-
----
-
 #### literate programming
 
 a common approach
@@ -732,6 +724,17 @@ a common approach
 .pull-left[
   <img src="reproducibility_assets/figure-html/Rmd_to_Word.png" width="90%">
 ]
+
+
+---
+
+#### orcid
+
+.center[
+  <img src="reproducibility_assets/figure-html/orcid.png" width="50%">
+]
+
+[orcid.org](https://orcid.org/)
 
 
 <!--
