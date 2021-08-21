@@ -1,2 +1,3 @@
 # science_mathematics_seminar
-Science and Mathematics Seminar Fall 2018
+
+Slides for a presentation regarding information management best practices at the Science and Mathematics Seminar (ASU Polytechnic Campus, fall 2018).
